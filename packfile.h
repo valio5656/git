@@ -139,11 +139,11 @@ int unpack_object_header(struct packed_git *, struct pack_window **, off_t *, un
 void release_pack_memory(size_t);
 
 /* global flag to enable extra checks when accessing packed objects */
-int do_check_packed_object_crc;
+extern int do_check_packed_object_crc;
 
 int packed_object_info(struct repository *r,
-			      struct packed_git *pack,
-			      off_t offset, struct object_info *);
+		       struct packed_git *pack,
+		       off_t offset, struct object_info *);
 
 void mark_bad_packed_object(struct packed_git *p, const unsigned char *sha1);
 const struct packed_git *has_packed_and_bad(struct repository *r, const unsigned char *sha1);
